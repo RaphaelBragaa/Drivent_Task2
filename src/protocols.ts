@@ -29,3 +29,32 @@ export type RequestError = {
   name: string,
   message: string,
 };
+
+export type TicketTypeEntity = {
+  id: number,
+  name: string,
+  price: number,
+  isRemote: boolean,
+  includesHotel: boolean,
+  createdAt: Date,
+  updatedAt: Date,
+}
+
+export type CreatePayment = {
+  ticketId: number;
+  cardData: {
+    issuer: string;
+    number: string;
+    name: string;
+    expirationDate: string;
+    cvv: string;
+  };
+};
+
+export type CreatePaymentParams = {
+  ticketId: number;
+  value: number;
+  cardIssuer: string;
+  cardLastDigits: string;
+};
+
